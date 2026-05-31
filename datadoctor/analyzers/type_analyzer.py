@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import pandas as pd
 
+from datadoctor._compat import is_str_col
 from datadoctor.models import Issue
 
 
@@ -9,7 +10,7 @@ def analyze(df: pd.DataFrame) -> list[Issue]:
     issues: list[Issue] = []
 
     for col in df.columns:
-        if df[col].dtype != object:
+        if not is_str_col(df[col]):
             continue
 
         series = df[col].dropna()

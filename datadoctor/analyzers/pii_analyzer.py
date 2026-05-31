@@ -4,6 +4,8 @@ import re
 
 import pandas as pd
 
+from datadoctor._compat import is_str_col
+
 _PATTERNS: dict[str, re.Pattern[str]] = {
     "email": re.compile(
         r"\b[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}\b"
@@ -43,7 +45,7 @@ def analyze(df: pd.DataFrame) -> dict[str, list[str]]:
             if any(h in col_lower for h in hints):
                 pii_found.add(pii_type)
 
-        if df[col].dtype == object:
+        if is_str_col(df[col]):
             sample = df[col].dropna().astype(str).head(_CONTENT_SCAN_SAMPLE)
             for pii_type, pattern in _PATTERNS.items():
                 if pii_type not in pii_found:

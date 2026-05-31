@@ -6,6 +6,7 @@ import pandas as pd
 from dateutil.parser import ParserError
 from dateutil.parser import parse as parse_date
 
+from datadoctor._compat import is_str_col
 from datadoctor.models import Issue
 
 _EMAIL_RE = re.compile(r"^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$")
@@ -27,7 +28,7 @@ def analyze(df: pd.DataFrame) -> list[Issue]:
     issues: list[Issue] = []
 
     for col in df.columns:
-        if df[col].dtype != object:
+        if not is_str_col(df[col]):
             continue
 
         series = df[col].dropna().astype(str)

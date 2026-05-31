@@ -6,6 +6,7 @@ from typing import Union
 
 import pandas as pd
 
+from datadoctor._compat import is_str_col
 from datadoctor.analyzers.pii_analyzer import analyze as _pii_analyze
 from datadoctor.loader import load
 from datadoctor.models import PIIReport
@@ -22,7 +23,7 @@ def mask_pii(source: Union[str, Path, pd.DataFrame]) -> pd.DataFrame:
     pii_info = _pii_analyze(df)
 
     for col, pii_types in pii_info.items():
-        if df[col].dtype != object:
+        if not is_str_col(df[col]):
             continue
         for pii_type in pii_types:
             df[col] = df[col].apply(lambda v, pt=pii_type: _mask_value(v, pt))

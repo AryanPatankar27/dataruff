@@ -6,6 +6,8 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
+from datadoctor._compat import is_str_col
+
 _KS_SIGNIFICANCE = 0.05
 _CATEGORY_DRIFT_THRESHOLD = 0.05
 
@@ -41,7 +43,7 @@ def analyze(old_df: pd.DataFrame, new_df: pd.DataFrame) -> dict[str, Any]:
                     drifted.add(col)
 
         # Categorical distribution drift
-        elif old_s.dtype == object and new_s.dtype == object:
+        elif is_str_col(old_s) and is_str_col(new_s):
             old_freq = old_s.value_counts(normalize=True)
             new_freq = new_s.value_counts(normalize=True)
             all_cats = set(old_freq.index) | set(new_freq.index)

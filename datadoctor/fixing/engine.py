@@ -5,6 +5,8 @@ import pandas as pd
 from dateutil.parser import ParserError
 from dateutil.parser import parse as parse_date
 
+from datadoctor._compat import is_str_col, str_columns
+
 _BOOL_MAP: dict[str, bool] = {
     "yes": True, "no": False,
     "y": True,   "n": False,
@@ -31,13 +33,13 @@ def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def trim_whitespace(df: pd.DataFrame) -> pd.DataFrame:
-    for col in df.select_dtypes(include=["object"]).columns:
+    for col in str_columns(df):
         df[col] = df[col].str.strip()
     return df
 
 
 def standardize_booleans(df: pd.DataFrame) -> pd.DataFrame:
-    for col in df.select_dtypes(include=["object"]).columns:
+    for col in str_columns(df):
         sample = df[col].dropna().astype(str).str.lower()
         if len(sample) == 0:
             continue
@@ -48,7 +50,7 @@ def standardize_booleans(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def normalize_dates(df: pd.DataFrame) -> pd.DataFrame:
-    for col in df.select_dtypes(include=["object"]).columns:
+    for col in str_columns(df):
         if not any(h in col.lower() for h in _DATE_HINTS):
             continue
 
@@ -73,7 +75,7 @@ def fill_missing(df: pd.DataFrame) -> pd.DataFrame:
         if pd.api.types.is_numeric_dtype(df[col]):
             median = df[col].median()
             df[col] = df[col].fillna(median)
-        elif df[col].dtype == object:
+        elif is_str_col(df[col]):
             mode = df[col].mode()
             if len(mode) > 0:
                 df[col] = df[col].fillna(mode[0])
