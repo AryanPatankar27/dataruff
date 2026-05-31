@@ -31,7 +31,7 @@ jobs:
       - name: Run tests with coverage
         run: |
           pytest tests/ \
-            --cov=datadoctor \
+            --cov=dataruff \
             --cov-report=xml \
             --cov-report=term-missing \
             -v

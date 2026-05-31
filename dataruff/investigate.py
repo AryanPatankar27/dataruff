@@ -5,16 +5,16 @@ from pathlib import Path
 
 import pandas as pd
 
-from datadoctor.analyzers import (
+from dataruff.analyzers import (
     duplicate,
     format_analyzer,
     null_analyzer,
     outlier,
     type_analyzer,
 )
-from datadoctor.loader import load
-from datadoctor.models import InvestigationReport
-from datadoctor.scoring.engine import compute as _compute_score
+from dataruff.loader import load
+from dataruff.models import InvestigationReport
+from dataruff.scoring.engine import compute as _compute_score
 
 
 def investigate(

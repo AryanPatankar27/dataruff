@@ -5,9 +5,9 @@ from pathlib import Path
 
 import pandas as pd
 
-from datadoctor.investigate import investigate
-from datadoctor.models import InvestigationReport
-from datadoctor.reporting.terminal import print_audit_report
+from dataruff.investigate import investigate
+from dataruff.models import InvestigationReport
+from dataruff.reporting.terminal import print_audit_report
 
 
 def audit(

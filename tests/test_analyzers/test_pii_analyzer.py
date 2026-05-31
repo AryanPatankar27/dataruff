@@ -3,7 +3,7 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from datadoctor.analyzers.pii_analyzer import analyze
+from dataruff.analyzers.pii_analyzer import analyze
 
 
 def test_email_column_name_hint():

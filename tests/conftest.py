@@ -1,4 +1,4 @@
-"""Shared fixtures for datadoctor tests."""
+"""Shared fixtures for dataruff tests."""
 from __future__ import annotations
 
 import numpy as np

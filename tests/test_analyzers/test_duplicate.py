@@ -3,7 +3,7 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from datadoctor.analyzers.duplicate import analyze
+from dataruff.analyzers.duplicate import analyze
 
 
 def test_no_duplicates_returns_empty():

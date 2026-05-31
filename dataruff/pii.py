@@ -6,10 +6,10 @@ from typing import Union
 
 import pandas as pd
 
-from datadoctor._compat import is_str_col
-from datadoctor.analyzers.pii_analyzer import analyze as _pii_analyze
-from datadoctor.loader import load
-from datadoctor.models import PIIReport
+from dataruff._compat import is_str_col
+from dataruff.analyzers.pii_analyzer import analyze as _pii_analyze
+from dataruff.loader import load
+from dataruff.models import PIIReport
 
 
 def detect_pii(source: Union[str, Path, pd.DataFrame]) -> PIIReport:

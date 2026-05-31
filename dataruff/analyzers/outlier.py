@@ -3,7 +3,7 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from datadoctor.models import Issue
+from dataruff.models import Issue
 
 _MIN_ROWS = 4
 _HIGH_OUTLIER_THRESHOLD = 0.10

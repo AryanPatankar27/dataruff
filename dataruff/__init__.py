@@ -2,7 +2,7 @@
 dataruff — One-command dataset health diagnostics.
 
 Usage:
-    from datadoctor import audit, fix, score, detect_pii
+    from dataruff import audit, fix, score, detect_pii
 
     audit(df)                    # Print quality report
     fix(df)                      # Return cleaned DataFrame
@@ -10,15 +10,15 @@ Usage:
     detect_pii(df)               # Return PIIReport
 """
 
-from datadoctor.audit import audit
-from datadoctor.investigate import investigate
-from datadoctor.fix import fix
-from datadoctor.validate import validate
-from datadoctor.compare import compare
-from datadoctor.pii import detect_pii, mask_pii
-from datadoctor.drift import detect_drift
-from datadoctor.anomalies import find_anomalies
-from datadoctor.score import score
+from dataruff.audit import audit
+from dataruff.investigate import investigate
+from dataruff.fix import fix
+from dataruff.validate import validate
+from dataruff.compare import compare
+from dataruff.pii import detect_pii, mask_pii
+from dataruff.drift import detect_drift
+from dataruff.anomalies import find_anomalies
+from dataruff.score import score
 
 __version__ = "0.1.0"
 

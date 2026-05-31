@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from datadoctor.models import Issue
+from dataruff.models import Issue
 
 _HIGH_THRESHOLD = 0.10  # >10% duplicates → high severity
 

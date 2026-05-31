@@ -3,7 +3,7 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from datadoctor.analyzers.format_analyzer import analyze
+from dataruff.analyzers.format_analyzer import analyze
 
 
 def test_valid_emails_no_issues():

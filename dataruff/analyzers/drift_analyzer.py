@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-from datadoctor._compat import is_str_col
+from dataruff._compat import is_str_col
 
 _KS_SIGNIFICANCE = 0.05
 _CATEGORY_DRIFT_THRESHOLD = 0.05

@@ -3,8 +3,8 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from datadoctor.investigate import investigate
-from datadoctor.models import InvestigationReport, ScoreBreakdown
+from dataruff.investigate import investigate
+from dataruff.models import InvestigationReport, ScoreBreakdown
 
 
 def test_returns_investigation_report(clean_df):

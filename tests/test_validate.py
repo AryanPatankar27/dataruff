@@ -3,7 +3,7 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from datadoctor.validate import validate
+from dataruff.validate import validate
 
 
 def test_all_valid_emails_passes(clean_df):

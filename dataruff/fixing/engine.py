@@ -5,7 +5,7 @@ import pandas as pd
 from dateutil.parser import ParserError
 from dateutil.parser import parse as parse_date
 
-from datadoctor._compat import is_str_col, str_columns
+from dataruff._compat import is_str_col, str_columns
 
 _BOOL_MAP: dict[str, bool] = {
     "yes": True, "no": False,

@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from datadoctor.analyzers.null_analyzer import analyze
+from dataruff.analyzers.null_analyzer import analyze
 
 
 def test_clean_df_no_issues(clean_df):

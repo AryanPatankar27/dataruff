@@ -6,8 +6,8 @@ import pandas as pd
 from dateutil.parser import ParserError
 from dateutil.parser import parse as parse_date
 
-from datadoctor._compat import is_str_col
-from datadoctor.models import Issue
+from dataruff._compat import is_str_col
+from dataruff.models import Issue
 
 _EMAIL_RE = re.compile(r"^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$")
 _EMAIL_HINTS = ("email", "mail", "e-mail", "e_mail")

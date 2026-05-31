@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import pytest
 
-from datadoctor.cli import main, _build_parser
+from dataruff.cli import main, _build_parser
 
 
 # ── parser smoke tests ────────────────────────────────────────────────────────

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from datadoctor.models import Issue
+from dataruff.models import Issue
 
 _HIGH_NULL_THRESHOLD = 0.30
 _MEDIUM_NULL_THRESHOLD = 0.05

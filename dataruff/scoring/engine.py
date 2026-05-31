@@ -4,7 +4,7 @@ import re
 
 import pandas as pd
 
-from datadoctor.models import Issue, ScoreBreakdown
+from dataruff.models import Issue, ScoreBreakdown
 
 _WEIGHTS = {
     "completeness": 0.25,

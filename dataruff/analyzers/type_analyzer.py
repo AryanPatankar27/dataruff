@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import pandas as pd
 
-from datadoctor._compat import is_str_col
-from datadoctor.models import Issue
+from dataruff._compat import is_str_col
+from dataruff.models import Issue
 
 
 def analyze(df: pd.DataFrame) -> list[Issue]:

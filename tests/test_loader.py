@@ -3,7 +3,7 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from datadoctor.loader import load
+from dataruff.loader import load
 
 
 def test_load_dataframe_returns_copy(clean_df):

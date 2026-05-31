@@ -7,15 +7,15 @@ from unittest.mock import patch
 import pandas as pd
 import pytest
 
-from datadoctor.models import (
+from dataruff.models import (
     DriftReport,
     InvestigationReport,
     Issue,
     PIIReport,
     ScoreBreakdown,
 )
-from datadoctor.reporting.json_reporter import report_to_dict, to_json
-from datadoctor.reporting.terminal import (
+from dataruff.reporting.json_reporter import report_to_dict, to_json
+from dataruff.reporting.terminal import (
     _plain_audit,
     print_audit_report,
     print_drift_report,
@@ -114,7 +114,7 @@ def test_plain_audit_prints_row_count(capsys):
 # Force the plain path even if rich is installed
 def test_print_audit_report_plain_fallback(capsys):
     report = _make_report()
-    with patch("datadoctor.reporting.terminal._RICH", False):
+    with patch("dataruff.reporting.terminal._RICH", False):
         print_audit_report(report)
     captured = capsys.readouterr()
     assert len(captured.out) > 0
@@ -122,7 +122,7 @@ def test_print_audit_report_plain_fallback(capsys):
 
 def test_print_audit_report_rich_path(capsys):
     report = _make_report()
-    with patch("datadoctor.reporting.terminal._RICH", True):
+    with patch("dataruff.reporting.terminal._RICH", True):
         try:
             print_audit_report(report)
         except ImportError:

@@ -7,7 +7,7 @@ from pathlib import Path
 
 def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="datadoctor",
+        prog="dataruff",
         description="Data quality diagnostics for CSV and Excel files.",
     )
     sub = parser.add_subparsers(dest="command", metavar="COMMAND")
@@ -49,15 +49,15 @@ def main(argv: list[str] | None = None) -> None:
     args = parser.parse_args(argv)
 
     if args.command == "audit":
-        from datadoctor.audit import audit
-        from datadoctor.reporting.json_reporter import to_json
+        from dataruff.audit import audit
+        from dataruff.reporting.json_reporter import to_json
 
         report = audit(args.file)
         if args.json:
             print(to_json(report))
 
     elif args.command == "fix":
-        from datadoctor.fix import fix
+        from dataruff.fix import fix
 
         cleaned = fix(args.file)
         p = Path(args.file)
@@ -66,7 +66,7 @@ def main(argv: list[str] | None = None) -> None:
         print(f"Fixed dataset saved to: {out}")
 
     elif args.command == "compare":
-        from datadoctor.compare import compare
+        from dataruff.compare import compare
 
         report = compare(args.old, args.new)
         print("\nComparison Report:")
@@ -83,7 +83,7 @@ def main(argv: list[str] | None = None) -> None:
         print()
 
     elif args.command == "score":
-        from datadoctor.score import score
+        from dataruff.score import score
 
         s = score(args.file)
         print(f"\nData Quality Score: {s.overall}/100")
@@ -95,14 +95,14 @@ def main(argv: list[str] | None = None) -> None:
         print()
 
     elif args.command == "detect-pii":
-        from datadoctor.pii import detect_pii
-        from datadoctor.reporting.terminal import print_pii_report
+        from dataruff.pii import detect_pii
+        from dataruff.reporting.terminal import print_pii_report
 
         report = detect_pii(args.file)
         print_pii_report(report)
 
     elif args.command == "mask-pii":
-        from datadoctor.pii import mask_pii
+        from dataruff.pii import mask_pii
 
         masked = mask_pii(args.file)
         p = Path(args.file)

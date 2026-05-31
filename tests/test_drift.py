@@ -4,8 +4,8 @@ import pandas as pd
 import numpy as np
 import pytest
 
-from datadoctor.drift import detect_drift
-from datadoctor.models import DriftReport
+from dataruff.drift import detect_drift
+from dataruff.models import DriftReport
 
 
 @pytest.fixture

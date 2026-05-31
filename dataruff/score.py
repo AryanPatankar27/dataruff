@@ -5,8 +5,8 @@ from typing import Union
 
 import pandas as pd
 
-from datadoctor.investigate import investigate
-from datadoctor.models import ScoreBreakdown
+from dataruff.investigate import investigate
+from dataruff.models import ScoreBreakdown
 
 
 def score(

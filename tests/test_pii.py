@@ -3,8 +3,8 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from datadoctor.pii import detect_pii, mask_pii, _mask_value
-from datadoctor.models import PIIReport
+from dataruff.pii import detect_pii, mask_pii, _mask_value
+from dataruff.models import PIIReport
 
 
 # ── detect_pii ────────────────────────────────────────────────────────────────

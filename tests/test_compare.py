@@ -3,8 +3,8 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from datadoctor.compare import compare
-from datadoctor.models import ComparisonReport
+from dataruff.compare import compare
+from dataruff.models import ComparisonReport
 
 
 @pytest.fixture

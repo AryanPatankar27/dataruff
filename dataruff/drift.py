@@ -5,9 +5,9 @@ from typing import Union
 
 import pandas as pd
 
-from datadoctor.analyzers.drift_analyzer import analyze as _drift_analyze
-from datadoctor.loader import load
-from datadoctor.models import DriftReport
+from dataruff.analyzers.drift_analyzer import analyze as _drift_analyze
+from dataruff.loader import load
+from dataruff.models import DriftReport
 
 
 def detect_drift(

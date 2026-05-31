@@ -3,7 +3,7 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from datadoctor.analyzers.outlier import analyze, get_outlier_mask, _iqr_mask, _zscore_mask
+from dataruff.analyzers.outlier import analyze, get_outlier_mask, _iqr_mask, _zscore_mask
 
 
 def test_no_outliers_clean_data():

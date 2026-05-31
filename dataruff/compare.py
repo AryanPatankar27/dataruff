@@ -5,8 +5,8 @@ from typing import Union
 
 import pandas as pd
 
-from datadoctor.loader import load
-from datadoctor.models import ComparisonReport
+from dataruff.loader import load
+from dataruff.models import ComparisonReport
 
 
 def compare(

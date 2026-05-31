@@ -3,8 +3,8 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from datadoctor.audit import audit
-from datadoctor.models import InvestigationReport
+from dataruff.audit import audit
+from dataruff.models import InvestigationReport
 
 
 def test_audit_returns_report(clean_df, capsys):

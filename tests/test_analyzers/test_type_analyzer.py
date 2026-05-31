@@ -3,7 +3,7 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from datadoctor.analyzers.type_analyzer import analyze
+from dataruff.analyzers.type_analyzer import analyze
 
 
 # ── mixed-type detection (lines 25-35) ───────────────────────────────────────

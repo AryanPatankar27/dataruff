@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import pytest
 
-from datadoctor.anomalies import find_anomalies
+from dataruff.anomalies import find_anomalies
 
 
 @pytest.fixture

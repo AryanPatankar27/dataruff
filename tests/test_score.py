@@ -3,9 +3,9 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from datadoctor.score import score
-from datadoctor.models import ScoreBreakdown
-from datadoctor.scoring.engine import compute, _completeness, _validity, _consistency, _uniqueness
+from dataruff.score import score
+from dataruff.models import ScoreBreakdown
+from dataruff.scoring.engine import compute, _completeness, _validity, _consistency, _uniqueness
 
 
 # ── score() public API ────────────────────────────────────────────────────────
@@ -80,7 +80,7 @@ def test_uniqueness_100_no_duplicates():
 
 
 def test_uniqueness_decreases_with_duplicates():
-    from datadoctor.models import Issue
+    from dataruff.models import Issue
     df = pd.DataFrame({"a": [1, 1, 2]})
     issue = Issue(type="duplicate_rows", severity="medium", count=1)
     u = _uniqueness(df, [issue])
@@ -90,6 +90,6 @@ def test_uniqueness_decreases_with_duplicates():
 # ── weighted scoring ──────────────────────────────────────────────────────────
 
 def test_overall_is_weighted_average():
-    from datadoctor.scoring.engine import _WEIGHTS
+    from dataruff.scoring.engine import _WEIGHTS
     # weights should sum to 1.0
     assert sum(_WEIGHTS.values()) == pytest.approx(1.0)

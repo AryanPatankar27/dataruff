@@ -40,19 +40,19 @@ dev = [
 ]
 
 [project.scripts]
-dataruff = "datadoctor.cli:main"
+dataruff = "dataruff.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["datadoctor*"]
+include = ["dataruff*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "--cov=datadoctor --cov-report=term-missing --cov-report=html -v"
+addopts = "--cov=dataruff --cov-report=term-missing --cov-report=html -v"
 
 [tool.coverage.run]
-source = ["datadoctor"]
-omit = ["tests/*", "datadoctor/cli.py"]
+source = ["dataruff"]
+omit = ["tests/*", "dataruff/cli.py"]
 
 [tool.coverage.report]
 show_missing = true

@@ -4,7 +4,7 @@ import re
 
 import pandas as pd
 
-from datadoctor._compat import is_str_col
+from dataruff._compat import is_str_col
 
 _PATTERNS: dict[str, re.Pattern[str]] = {
     "email": re.compile(

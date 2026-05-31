@@ -3,8 +3,8 @@ from __future__ import annotations
 import pandas as pd
 import pytest
 
-from datadoctor.fix import fix
-from datadoctor.fixing.engine import (
+from dataruff.fix import fix
+from dataruff.fixing.engine import (
     fill_missing,
     normalize_dates,
     remove_duplicates,

@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from typing import Any
 
-from datadoctor.models import InvestigationReport
+from dataruff.models import InvestigationReport
 
 
 def report_to_dict(report: InvestigationReport) -> dict[str, Any]:

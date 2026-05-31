@@ -9,7 +9,7 @@
 **The Ruff of datasets.** One command to discover, explain, score, and fix data quality problems in Pandas DataFrames and CSV/Excel files.
 
 ```python
-from datadoctor import audit
+from dataruff import audit
 
 audit(df)
 ```
@@ -47,7 +47,7 @@ pip install dataruff[rich]
 
 ```python
 import pandas as pd
-from datadoctor import audit, fix, score, validate, detect_pii
+from dataruff import audit, fix, score, validate, detect_pii
 
 df = pd.read_csv("customers.csv")
 
@@ -181,7 +181,7 @@ dataruff mask-pii customers.csv
 ## Architecture
 
 ```
-datadoctor/
+dataruff/
 ├── analyzers/       # DuplicateAnalyzer, NullAnalyzer, TypeAnalyzer,
 │                    # FormatAnalyzer, OutlierAnalyzer, PIIAnalyzer, DriftAnalyzer
 ├── scoring/         # Weighted scoring engine

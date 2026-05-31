@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datadoctor.models import DriftReport, InvestigationReport, PIIReport
+from dataruff.models import DriftReport, InvestigationReport, PIIReport
 
 try:
     from rich.console import Console

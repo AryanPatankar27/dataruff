@@ -6,9 +6,9 @@ from typing import Any, Union
 import numpy as np
 import pandas as pd
 
-from datadoctor.analyzers.outlier import analyze as _outlier_analyze
-from datadoctor.analyzers.outlier import get_outlier_mask
-from datadoctor.loader import load
+from dataruff.analyzers.outlier import analyze as _outlier_analyze
+from dataruff.analyzers.outlier import get_outlier_mask
+from dataruff.loader import load
 
 
 def find_anomalies(

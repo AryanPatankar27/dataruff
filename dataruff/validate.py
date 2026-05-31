@@ -6,8 +6,8 @@ from typing import Any, Union
 
 import pandas as pd
 
-from datadoctor.loader import load
-from datadoctor.scoring.engine import _schema_compliance
+from dataruff.loader import load
+from dataruff.scoring.engine import _schema_compliance
 
 _EMAIL_RE = re.compile(r"^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$")
 

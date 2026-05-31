@@ -1,4 +1,4 @@
-from datadoctor.analyzers import (
+from dataruff.analyzers import (
     duplicate,
     null_analyzer,
     type_analyzer,

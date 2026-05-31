@@ -5,8 +5,8 @@ from typing import Union
 
 import pandas as pd
 
-from datadoctor.fixing.engine import fix_all
-from datadoctor.loader import load
+from dataruff.fixing.engine import fix_all
+from dataruff.loader import load
 
 
 def fix(source: Union[str, Path, pd.DataFrame]) -> pd.DataFrame:
