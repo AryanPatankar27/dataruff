@@ -20,7 +20,7 @@ from dataruff.drift import detect_drift
 from dataruff.anomalies import find_anomalies
 from dataruff.score import score
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "audit",
