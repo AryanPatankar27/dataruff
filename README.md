@@ -1,9 +1,9 @@
-# datadoctor
+# dataruff
 
 [![CI](https://github.com/AryanPatankar27/datadoctor/actions/workflows/ci.yml/badge.svg)](https://github.com/AryanPatankar27/datadoctor/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/AryanPatankar27/datadoctor/branch/main/graph/badge.svg)](https://codecov.io/gh/AryanPatankar27/datadoctor)
-[![PyPI version](https://img.shields.io/pypi/v/datadoctor)](https://pypi.org/project/datadoctor/)
-[![Python](https://img.shields.io/pypi/pyversions/datadoctor)](https://pypi.org/project/datadoctor/)
+[![PyPI version](https://img.shields.io/pypi/v/dataruff)](https://pypi.org/project/dataruff/)
+[![Python](https://img.shields.io/pypi/pyversions/dataruff)](https://pypi.org/project/dataruff/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **The Ruff of datasets.** One command to discover, explain, score, and fix data quality problems in Pandas DataFrames and CSV/Excel files.
@@ -32,13 +32,13 @@ Rows: 10,000 | Columns: 12
 ## Install
 
 ```bash
-pip install datadoctor
+pip install dataruff
 ```
 
 Optionally install [rich](https://github.com/Textualize/rich) for prettier terminal output:
 
 ```bash
-pip install datadoctor[rich]
+pip install dataruff[rich]
 ```
 
 ---
@@ -153,26 +153,26 @@ validate(df, schema={
 
 ```bash
 # Audit a CSV file
-datadoctor audit customers.csv
+dataruff audit customers.csv
 
 # Output as JSON
-datadoctor audit customers.csv --json
+dataruff audit customers.csv --json
 
 # Fix issues and write cleaned file
-datadoctor fix customers.csv
+dataruff fix customers.csv
 # -> customers_clean.csv
 
 # Compare two datasets
-datadoctor compare old.csv new.csv
+dataruff compare old.csv new.csv
 
 # Data quality score
-datadoctor score customers.csv
+dataruff score customers.csv
 
 # PII detection
-datadoctor detect-pii customers.csv
+dataruff detect-pii customers.csv
 
 # Mask PII
-datadoctor mask-pii customers.csv
+dataruff mask-pii customers.csv
 # -> customers_masked.csv
 ```
 

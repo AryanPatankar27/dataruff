@@ -1,5 +1,5 @@
 """
-datadoctor — One-command dataset health diagnostics.
+dataruff — One-command dataset health diagnostics.
 
 Usage:
     from datadoctor import audit, fix, score, detect_pii

@@ -3,13 +3,13 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "datadoctor"
+name = "dataruff"
 version = "0.1.0"
 description = "One-command dataset health diagnostics — the Ruff of datasets."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
-authors = [{ name = "datadoctor contributors" }]
+authors = [{ name = "dataruff contributors" }]
 keywords = ["data quality", "pandas", "csv", "data validation", "EDA", "data science"]
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -40,7 +40,7 @@ dev = [
 ]
 
 [project.scripts]
-datadoctor = "datadoctor.cli:main"
+dataruff = "datadoctor.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
