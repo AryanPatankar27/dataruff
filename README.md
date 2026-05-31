@@ -1,7 +1,7 @@
 # dataruff
 
-[![CI](https://github.com/AryanPatankar27/datadoctor/actions/workflows/ci.yml/badge.svg)](https://github.com/AryanPatankar27/datadoctor/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/AryanPatankar27/datadoctor/branch/main/graph/badge.svg)](https://codecov.io/gh/AryanPatankar27/datadoctor)
+[![CI](https://github.com/AryanPatankar27/dataruff/actions/workflows/ci.yml/badge.svg)](https://github.com/AryanPatankar27/dataruff/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/AryanPatankar27/dataruff/branch/main/graph/badge.svg)](https://codecov.io/gh/AryanPatankar27/dataruff)
 [![PyPI version](https://img.shields.io/pypi/v/dataruff)](https://pypi.org/project/dataruff/)
 [![Python](https://img.shields.io/pypi/pyversions/dataruff)](https://pypi.org/project/dataruff/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
