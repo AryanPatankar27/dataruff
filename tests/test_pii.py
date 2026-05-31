@@ -125,3 +125,56 @@ def test_mask_value_short_aadhaar_passthrough():
     result = _mask_value("123", "aadhaar")
     # length <= 4, returns as-is
     assert result == "123"
+
+
+# ── edge cases that cover the remaining pii.py branches ──────────────────────
+
+def test_mask_value_phone_too_short():
+    # < 4 digits → returns value unchanged (line 41)
+    result = _mask_value("99", "phone")
+    assert result == "99"
+
+
+def test_mask_value_email_no_at_sign():
+    # email without '@' → returns value unchanged (line 48)
+    result = _mask_value("notanemail", "email")
+    assert result == "notanemail"
+
+
+def test_mask_value_aadhaar_long():
+    # > 4 digits → masked (line 53)
+    result = _mask_value("123456789012", "aadhaar")
+    assert result.endswith("9012")
+    assert "*" in result
+
+
+def test_mask_value_credit_card_short():
+    # <= 4 digits → returns unchanged (line 54)
+    result = _mask_value("123", "credit_card")
+    assert result == "123"
+
+
+def test_mask_value_ssn_wrong_digit_count():
+    # SSN without exactly 9 digits → returns unchanged (line 61)
+    result = _mask_value("123-45", "ssn")
+    assert result == "123-45"
+
+
+def test_mask_value_pan_too_short():
+    # PAN < 4 chars → returns unchanged (line 66)
+    result = _mask_value("AB", "pan")
+    assert result == "AB"
+
+
+def test_mask_value_unknown_pii_type():
+    # Unrecognised type → falls through to final return (line 68)
+    result = _mask_value("somevalue", "unknown_type")
+    assert result == "somevalue"
+
+
+def test_mask_pii_non_object_dtype_column_skipped():
+    # A numeric column that somehow got flagged should be skipped (line 25-26)
+    df = pd.DataFrame({"phone": [9876543210, 8765432109]})  # int64, not object
+    result = mask_pii(df)
+    # dtype unchanged — no masking attempted
+    assert result["phone"].dtype == df["phone"].dtype

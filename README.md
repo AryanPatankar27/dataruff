@@ -1,5 +1,11 @@
 # datadoctor
 
+[![CI](https://github.com/AryanPatankar27/datadoctor/actions/workflows/ci.yml/badge.svg)](https://github.com/AryanPatankar27/datadoctor/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/AryanPatankar27/datadoctor/branch/main/graph/badge.svg)](https://codecov.io/gh/AryanPatankar27/datadoctor)
+[![PyPI version](https://img.shields.io/pypi/v/datadoctor)](https://pypi.org/project/datadoctor/)
+[![Python](https://img.shields.io/pypi/pyversions/datadoctor)](https://pypi.org/project/datadoctor/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 **The Ruff of datasets.** One command to discover, explain, score, and fix data quality problems in Pandas DataFrames and CSV/Excel files.
 
 ```python

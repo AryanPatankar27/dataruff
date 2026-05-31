@@ -38,6 +38,8 @@ coverage.xml
 *.swo
 .DS_Store
 
-# Distribution
+# Distribution / build
+dist/
+build/
 *.tar.gz
 *.whl
